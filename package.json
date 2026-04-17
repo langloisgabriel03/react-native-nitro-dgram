@@ -36,7 +36,7 @@
     },
     "dependencies": {
         "eventemitter3": "^5.0.1",
-        "react-native-nitro-buffer": "~0.0.14"
+        "react-native-nitro-buffer": "^0.2.2"
     },
     "devDependencies": {
         "@types/node": "*",
