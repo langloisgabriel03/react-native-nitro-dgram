@@ -18,7 +18,11 @@ include_directories(
 include(${CMAKE_CURRENT_SOURCE_DIR}/../nitrogen/generated/android/RustCUdp+autolinking.cmake)
 
 target_link_directories(${PACKAGE_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI})
-target_link_libraries(${PACKAGE_NAME} 
+
+# Required for Android 15 16KB page-size compatibility
+target_link_options(${PACKAGE_NAME} PRIVATE "-Wl,-z,max-page-size=16384")
+
+target_link_libraries(${PACKAGE_NAME}
     rust_c_udp
     log
 )
